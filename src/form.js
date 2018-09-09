@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DataList from './dataList';
 
 class Form extends Component {
 
@@ -9,6 +10,7 @@ class Form extends Component {
             date: undefined
         }
     }
+
 
     handleChange = (event) => {
         const target = event.target;
@@ -22,11 +24,7 @@ class Form extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // let weightInfo = localStorage.getItem('weightInfo');
-        // if (!weightInfo) {
-        //     let info = [];
-        //     localStorage.setItem('weightInfo', info);
-        // }
+
         let weightInfo = [];
         weightInfo.push({
             weight: this.state.weight,
@@ -41,9 +39,11 @@ class Form extends Component {
         return (
             <div className="App container">
                 <div className="row">
-                    <h2>
-                        Please add data
-                    </h2>
+                    <div className="col">
+                        <h2>
+                            Please add data
+                        </h2>
+                    </div>
                 </div>
                 <form className="form-group">
                     <label htmlFor="date">
@@ -61,6 +61,7 @@ class Form extends Component {
                         </button>
                     </div>
                 </form>
+                <DataList></DataList>
             </div>
         );
     }
