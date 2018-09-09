@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Form from './form';
+import style from './../node_modules/bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
+
   render() {
     return (
-      <div className="App">
-        <h2>Hello World</h2>
-      </div>
+      <Form></Form>
     );
   }
 }
