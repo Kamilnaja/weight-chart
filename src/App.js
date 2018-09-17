@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './../node_modules/bootstrap/dist/css/bootstrap.css';
 import savedEntries from './data.json';
-import Form from './form';
-import Tabbed from './tabbed';
+import Form from './components/form';
+import Tabbed from './components/tabbed';
 
 class App extends Component {
     constructor() {

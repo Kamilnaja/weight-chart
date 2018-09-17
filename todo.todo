@@ -1,14 +1,15 @@
 ☐ save data to local
-☐ add tabs - list and chart
+✔ add tabs - list and chart @done(18-09-17 22:58)
 WYMAGANIA:
     ☐ Aplikacja ma oferować crud na indexed db
     ☐ Aplikacja ma wyświetlać wykres danych
     ☐ Oferować pobranie danych 
     ☐ Notatki do każdego wpisu
     ☐ walidację danych
-    ✔ 2 taby - wykres danych oraz portowane dane @done(18-09-17 22:35)
     ☐ posortować dane 
-    ✔ show choosen tab @done(18-09-17 22:48)
+    ☐ i18
 Archive:
+  ✔ show choosen tab @done(18-09-17 22:48) @project(WYMAGANIA)
+  ✔ 2 taby - wykres danych oraz portowane dane @done(18-09-17 22:35) @project(WYMAGANIA)
   ✔ display data from file @done(18-09-09 20:35)
   ✘ display data from local storage @cancelled(18-09-17 21:46)
