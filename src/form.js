@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DataList from './dataList';
 
 class Form extends Component {
 

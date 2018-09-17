@@ -1,5 +1,19 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.tabbed {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.tabbed li {
+    border: 2px dashed tan;
+    width: calc(50% - 20px);
+    display: inline-block;
+    padding-left: 10px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.tabbed .active {
+    background-color: tan;
+    color: white;
 }

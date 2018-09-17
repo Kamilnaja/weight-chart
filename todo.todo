@@ -1,4 +1,14 @@
-✔ display data from file @done(18-09-09 20:35)
-☐ display data from local storage
 ☐ save data to local
 ☐ add tabs - list and chart
+WYMAGANIA:
+    ☐ Aplikacja ma oferować crud na indexed db
+    ☐ Aplikacja ma wyświetlać wykres danych
+    ☐ Oferować pobranie danych 
+    ☐ Notatki do każdego wpisu
+    ☐ walidację danych
+    ✔ 2 taby - wykres danych oraz portowane dane @done(18-09-17 22:35)
+    ☐ posortować dane 
+    ✔ show choosen tab @done(18-09-17 22:48)
+Archive:
+  ✔ display data from file @done(18-09-09 20:35)
+  ✘ display data from local storage @cancelled(18-09-17 21:46)

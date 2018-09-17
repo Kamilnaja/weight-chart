@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Form from './form';
 import './../node_modules/bootstrap/dist/css/bootstrap.css';
 import savedEntries from './data.json';
-import DataList from './dataList';
+import Form from './form';
+import Tabbed from './tabbed';
 
 class App extends Component {
     constructor() {
@@ -27,8 +27,8 @@ class App extends Component {
     saveTemporaryEntries(parsedDate, item, parsedEntries) {
         let dataToSave = {
             date: parsedDate,
-            weight: item.weight
-        };
+            weight: parseInt(item.weight, 10)
+        }
         parsedEntries.push(dataToSave);
         this.saveToState(parsedEntries);
     }
@@ -62,8 +62,8 @@ class App extends Component {
             weight: this.state.weight
         };
 
-        this.setState((previousState) => {
-            previousState.userEntries.push(dataToSave)
+        this.setState({
+            userEntries: [...this.state.userEntries, dataToSave]
         });
 
     }
@@ -72,7 +72,7 @@ class App extends Component {
         return (
             <React.Fragment>
                 <Form handleChange={this.handleChange} handleSubmit={this.handleSubmit}></Form>
-                <DataList userEntries={this.state.userEntries}></DataList>
+                <Tabbed tabs={['chart', 'list']} userEntries={this.state.userEntries}></Tabbed>
             </React.Fragment>
         );
     }
