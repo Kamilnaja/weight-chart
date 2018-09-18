@@ -23,7 +23,7 @@ class App extends Component {
             this.saveTemporaryEntries(parsedDate, item, parsedEntries);
         });
     }
-
+    // todo - serve user data by service
     saveTemporaryEntries(parsedDate, item, parsedEntries) {
         let dataToSave = {
             date: parsedDate,
