@@ -17,3 +17,19 @@
     background-color: tan;
     color: white;
 }
+
+.chartWrapper {
+    position: relative;
+}
+
+.chartWrapper>canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.chartAreaWrapper {
+    width: 100%;
+    overflow-x: scroll;
+}

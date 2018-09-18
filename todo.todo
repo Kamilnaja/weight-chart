@@ -8,6 +8,7 @@ WYMAGANIA:
     ☐ walidację danych
     ☐ posortować dane 
     ☐ i18
+    ☐ configure chart
 Archive:
   ✔ show choosen tab @done(18-09-17 22:48) @project(WYMAGANIA)
   ✔ 2 taby - wykres danych oraz portowane dane @done(18-09-17 22:35) @project(WYMAGANIA)

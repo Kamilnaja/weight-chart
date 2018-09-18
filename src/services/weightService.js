@@ -7,29 +7,28 @@ export default class weightService {
     }
 
     getWeightList() {
-        return this.itemList
+        return this.itemList;
     }
 
     setWeightList() {
-        // todo - edit this
     }
 
     getWeightFromItemList() {
-        let parsedData = [];
+        const parsedData = [];
         this.itemList.forEach(item => parsedData.push(item.weight));
         return parsedData;
     }
 
     getDaysFromItemList() {
-        let parsedData = [];
+        const parsedData = [];
         this.itemList.forEach(item => {
-            let itemToChangeFormat = new Date(item.date).toDateString();
-            parsedData.push(itemToChangeFormat)
+            const itemToChangeFormat = new Date(item.date).toDateString();
+            parsedData.push(itemToChangeFormat);
         });
         return parsedData;
     }
 
     getParsedData() {
-        return this.parsedData
+        return this.parsedData;
     }
 }

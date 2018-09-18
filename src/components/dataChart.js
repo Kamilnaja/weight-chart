@@ -11,11 +11,12 @@ class DataChart extends Component {
     }
 
     componentDidMount() {
-
-        var ctx = document.getElementById("myChart").getContext('2d');
+        var ctx = document.getElementById('myChart').getContext('2d');
         // eslint-disable-next-line
         var myChart = new Chart(ctx, {
             type: 'line',
+            maintainAspectRatio: false,
+            responsive: true,
             data: {
                 labels: this.service.getDaysFromItemList(),
                 datasets: [{
@@ -31,6 +32,9 @@ class DataChart extends Component {
                 }]
             },
             options: {
+                legend: {
+                    display: false
+                },
                 scales: {
                     yAxes: [{
                         ticks: {
@@ -49,7 +53,13 @@ class DataChart extends Component {
                     <h2>
                         Chart
                     </h2>
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <div className="chartWrapper">
+                        <div className="chartAreaWrapper">
+                            <div className="chartAreaWrapper2">
+                                <canvas id="myChart" width="1500" height="500"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
