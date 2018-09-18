@@ -1,6 +1,6 @@
 import Data from '../data.json';
 
-export default class weightService {
+export default class WeightService {
     constructor() {
         this.itemList = Data;
         this.getWeightFromItemList();
@@ -26,6 +26,14 @@ export default class weightService {
             parsedData.push(itemToChangeFormat);
         });
         return parsedData;
+    }
+
+    getParsedDataObject() {
+        let parsedDataObj = this.itemList;
+        for (var i in this.itemList) {
+            parsedDataObj[i].date = new Date(parsedDataObj[i].date).toDateString();
+        }
+        return parsedDataObj;
     }
 
     getParsedData() {

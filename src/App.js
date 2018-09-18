@@ -1,29 +1,11 @@
 import React, { Component } from 'react';
 import './../node_modules/bootstrap/dist/css/bootstrap.css';
-import savedEntries from './data.json';
 import Form from './components/form';
 import Tabbed from './components/tabbed';
 
+
 class App extends Component {
-    constructor() {
-        super()
-        this.state = {
-            userEntries: []
-        }
-    }
 
-    componentWillMount() {
-        this.parseData();
-    }
-
-    parseData() {
-        let parsedEntries = [];
-        savedEntries.forEach(item => {
-            let parsedDate = new Date(item.date).toDateString();
-            this.saveTemporaryEntries(parsedDate, item, parsedEntries);
-        });
-    }
-    // todo - serve user data by service
     saveTemporaryEntries(parsedDate, item, parsedEntries) {
         let dataToSave = {
             date: parsedDate,
@@ -72,7 +54,7 @@ class App extends Component {
         return (
             <React.Fragment>
                 <Form handleChange={this.handleChange} handleSubmit={this.handleSubmit}></Form>
-                <Tabbed tabs={['chart', 'list']} userEntries={this.state.userEntries}></Tabbed>
+                <Tabbed tabs={['chart', 'list']} ></Tabbed>
             </React.Fragment>
         );
     }

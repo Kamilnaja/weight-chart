@@ -7,6 +7,7 @@ class DataChart extends Component {
         super(props);
         this.state = {};
         this.chartService = new ChartService();
+
     }
 
     componentDidMount() {
@@ -15,7 +16,11 @@ class DataChart extends Component {
 
     updateCanvas = () => {
         const ctx = this.refs.canvas.getContext('2d');
-        var myChart = this.chartService.getConfiguredChart(ctx);
+        var myChart = this.chartService.getConfiguredChart(
+            ctx,
+            this.props.userEntriesDays,
+            this.props.userEntriesWeight
+        );
     }
 
     render() {

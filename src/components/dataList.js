@@ -8,7 +8,7 @@ class DataList extends Component {
                 <div className="col">
                     <h2>Wyniki</h2>
                     <ul>
-                        {this.props.userEntries.map((item, idx) => (
+                        {this.props.userEntriesObject.map((item, idx) => (
                             <li key={idx}>
                                 {item.date} | {item.weight}
                             </li>

@@ -1,25 +1,24 @@
 /**
- * Returns configured chat
+ * Returns configured chart
  */
-
 import Chart from 'chart.js';
-import weightService from './../services/weightService';
+import WeightService from './../services/weightService';
 
 export default class ChartService {
     constructor() {
-        this.weightService = new weightService();
+        this.weightService = new WeightService();
     };
 
-    getConfiguredChart = (ctx) => {
+    getConfiguredChart = (ctx, days, weight) => {
         return new Chart(ctx, {
             type: 'line',
             maintainAspectRatio: false,
             responsive: true,
             data: {
-                labels: this.weightService.getDaysFromItemList(),
+                labels: days,
                 datasets: [{
                     label: 'Masa ciała',
-                    data: this.weightService.getWeightFromItemList(),
+                    data: weight,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)'
                     ],

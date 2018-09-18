@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import DataChart from './dataChart';
 import DataList from './dataList';
+import WeightService from './../services/weightService';
 
 class Tabbed extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: 'chart'
-        }
+            active: 'chart',
+            userEntriesObject: [],
+            userEntriesDays: [],
+            userEntriesWeight: []
+        };
+        this.weightService = new WeightService();
+    }
+
+    componentWillMount() {
+        this.setState({
+            userEntriesObject: this.weightService.getParsedDataObject(),
+            userEntriesWeight: this.weightService.getWeightFromItemList(),
+            userEntriesDays: this.weightService.getDaysFromItemList()
+        })
     }
 
     handleClick = (e) => {
@@ -32,8 +45,11 @@ class Tabbed extends Component {
                             )}
                     </ul>
                 </div>
-                {this.state.active === 'chart' && <DataChart></DataChart>}
-                {this.state.active === 'list' && <DataList {...this.props}></DataList>}
+                {this.state.active === 'chart' && <DataChart
+                    userEntriesWeight={this.state.userEntriesWeight}
+                    userEntriesDays={this.state.userEntriesDays}
+                ></DataChart>}
+                {this.state.active === 'list' && <DataList userEntriesObject={this.state.userEntriesObject}></DataList>}
             </div>
         );
     }
